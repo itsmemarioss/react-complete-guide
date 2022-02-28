@@ -9,10 +9,15 @@ function App() {
     {title: 'Car Insurance 3', amount: 432, date: new Date()}
   ];
 
+  const addExpanseHandler = expense => {
+    console.log('in app.js');
+    console.log(expense);
+  }
+
   return (
     <div>
       <h2>Let's get started</h2>
-      <NewExpense></NewExpense>
+      <NewExpense onAddExpense={addExpanseHandler}></NewExpense>
       <Expenses items={expenses}/>
     </div>
   );

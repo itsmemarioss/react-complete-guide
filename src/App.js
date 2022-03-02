@@ -1,17 +1,20 @@
+import { useState } from 'react';
 import './App.css';
 import Expenses from './components/expenses/Expenses';
 import NewExpense from './components/newExpense/NewExpense';
 
+const defaultList = [
+  {id:'1', title: 'Car Insurance 1', amount: 234, date: new Date()},
+  {id:'2', title: 'Car Insurance 2', amount: 342, date: new Date()},
+  {id:'3', title: 'Car Insurance 3', amount: 432, date: new Date()}
+];
+
 function App() {
-  const expenses = [
-    {title: 'Car Insurance 1', amount: 234, date: new Date()},
-    {title: 'Car Insurance 2', amount: 342, date: new Date()},
-    {title: 'Car Insurance 3', amount: 432, date: new Date()}
-  ];
+
+  const[expenses, setExpenses ] = useState(defaultList);
 
   const addExpanseHandler = expense => {
-    console.log('in app.js');
-    console.log(expense);
+    setExpenses( (prevExpenses) => [expense, ...prevExpenses]);
   }
 
   return (

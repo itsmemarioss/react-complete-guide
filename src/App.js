@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 import Expenses from './components/expenses/Expenses';
-import Filter from './components/filter/Filter';
 import NewExpense from './components/newExpense/NewExpense';
 
 const defaultList = [
@@ -20,7 +19,6 @@ function App() {
 
   return (
     <div>
-      <h2>Let's get started</h2>
       <NewExpense onAddExpense={addExpanseHandler}></NewExpense>
       <Expenses items={expenses} />
     </div>
